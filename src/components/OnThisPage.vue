@@ -57,6 +57,7 @@ export default {
 
   watch: {
     $route: function() {
+      if (!process.isClient) return
       if (process.isClient && window.location.hash) {
         this.activeAnchor = window.location.hash;
       }
