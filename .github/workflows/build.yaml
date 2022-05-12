@@ -20,8 +20,10 @@ jobs:
       - name: Build Gridsome site
         run: yarn build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./dist
+          commit_message: 'Automatic deploy: ${{ github.event.head_commit.message }}'
