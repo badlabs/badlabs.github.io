@@ -1,9 +1,20 @@
 <template>
-  <div
+  <nav
     ref="sidebar"
     v-if="showSidebar"
     class="px-4 pt-8 lg:pt-12"
   >
+    <div v-if="sections.length > 0" class="flex items-center justify-evenly mb-8 sm:hidden">
+      <g-link
+        v-for="link in sections"
+        :key="link.path"
+        :to="link.path"
+        class="font-bold text-lg nav-link hover:text-ui-primary"
+      >
+        {{ link.title }}
+      </g-link>
+    </div>
+    
     <div
       v-for="(section, index) in sidebar.sections"
       :key="section.title"
@@ -37,13 +48,19 @@
         </li>
       </ul>
     </div>
-  </div>
+  </nav>
 </template>
 
 <static-query>
 query Sidebar {
   metadata {
     settings {
+      nav {
+        links {
+          path
+          title
+        }
+      }
       sidebar {
         name
         sections {
@@ -71,6 +88,9 @@ export default {
       return this.$static.metadata.settings.sidebar.find(
         sidebar => sidebar.name === this.$page.markdownPage.sidebar
       );
+    },
+    sections() {
+      return this.$static.metadata.settings.nav.links
     },
     showSidebar() {
       return this.$page.markdownPage.sidebar

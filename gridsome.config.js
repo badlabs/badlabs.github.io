@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Docc',
+  siteName: 'Badlabs',
   icon: {
     favicon: './src/assets/favicon.png',
     touchicon: './src/assets/favicon.png'
@@ -18,12 +18,34 @@ module.exports = {
     github: process.env.URL_GITHUB || false,
     nav: {
       links: [
-        { path: '/docs/', title: 'Docs' }
+        { path: '/docs/', title: 'Docs' },
+        { path: '/test/', title: 'Test' }
       ]
     },
     sidebar: [
       {
         name: 'docs',
+        sections: [
+          {
+            title: 'Getting Started',
+            items: [
+              '/docs/',
+              '/docs/installation/',
+              '/docs/writing-content/',
+              '/docs/deploying/',
+            ]
+          },
+          {
+            title: 'Configuration',
+            items: [
+              '/docs/settings/',
+              '/docs/sidebar/',
+            ]
+          }
+        ]
+      },
+      {
+        name: 'test',
         sections: [
           {
             title: 'Getting Started',
