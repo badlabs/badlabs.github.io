@@ -38,7 +38,8 @@ module.exports = {
           {
             title: 'TradeBot',
             items: [
-                '/docs/trade-bot/architecture/'
+                '/docs/trade-bot/architecture/',
+                '/docs/trade-bot/db-types/',
             ]
           }
         ]
