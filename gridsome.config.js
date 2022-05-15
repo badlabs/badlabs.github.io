@@ -4,6 +4,10 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+function filePathToLink(path = ''){
+  return `/${path.endsWith('index.md') ? path.replace('index.md', '') : path.replace('.md', '')}/`
+}
+
 module.exports = {
   siteName: 'Badlabs',
   icon: {
@@ -29,16 +33,12 @@ module.exports = {
             title: 'Getting Started',
             items: [
               '/docs/',
-              '/docs/installation/',
-              '/docs/writing-content/',
-              '/docs/deploying/',
             ]
           },
           {
-            title: 'Configuration',
+            title: 'TradeBot',
             items: [
-              '/docs/settings/',
-              '/docs/sidebar/',
+                '/docs/trade-bot/architecture/'
             ]
           }
         ]
@@ -90,5 +90,14 @@ module.exports = {
       }
     }
 
-  ]
+  ],
+  templates: {
+    MarkdownPage: [
+      {
+        path: (node) => {
+          return filePathToLink(node.fileInfo.path)
+        }
+      }
+    ]
+  }
 }
