@@ -1,4 +1,4 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
@@ -18,34 +18,12 @@ module.exports = {
     github: process.env.URL_GITHUB || false,
     nav: {
       links: [
-        { path: '/docs/', title: 'Docs' },
-        { path: '/test/', title: 'Test' }
+        { path: '/docs/', title: 'Docs' }
       ]
     },
     sidebar: [
       {
         name: 'docs',
-        sections: [
-          {
-            title: 'Getting Started',
-            items: [
-              '/docs/',
-              '/docs/installation/',
-              '/docs/writing-content/',
-              '/docs/deploying/',
-            ]
-          },
-          {
-            title: 'Configuration',
-            items: [
-              '/docs/settings/',
-              '/docs/sidebar/',
-            ]
-          }
-        ]
-      },
-      {
-        name: 'test',
         sections: [
           {
             title: 'Getting Started',
@@ -108,7 +86,7 @@ module.exports = {
 
     {
       use: '@gridsome/plugin-sitemap',
-      options: {  
+      options: {
       }
     }
 
