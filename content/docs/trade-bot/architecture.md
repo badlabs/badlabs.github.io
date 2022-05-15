@@ -1,5 +1,5 @@
 ---
-description: ''
+description: 'Learn about architecture of TradeBot'
 sidebar: 'docs'
 ---
 

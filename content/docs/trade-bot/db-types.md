@@ -1,5 +1,5 @@
 ---
-description: ''
+description: 'Learn how to use @badlabs/trade-bot__db-types package for integration with TradeBot.'
 sidebar: 'docs'
 ---
 
