@@ -40,6 +40,7 @@ module.exports = {
             items: [
                 '/docs/trade-bot/architecture/',
                 '/docs/trade-bot/exchange-client/',
+                '/docs/trade-bot/trade-bot/',
                 '/docs/trade-bot/db-types/',
 
             ]
